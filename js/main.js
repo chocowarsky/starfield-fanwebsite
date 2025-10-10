@@ -17,12 +17,32 @@ faders.forEach((el) => {
   appearOnScroll.observe(el);
 });
 
-// Efek fade navbar saat scroll
-const navbar = document.querySelector(".navbar");
+// Load Navbar dynamically
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("../pages/navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Efek fade navbar saat scroll (setelah navbar dimuat)
+      const navbar = document.querySelector(".navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.style.backgroundColor = "rgba(15, 15, 20, 0.95)";
+        } else {
+          navbar.style.backgroundColor = "rgba(15, 15, 20, 0.7)";
+        }
+      });
+    })
+    .catch(err => console.error("Navbar failed to load:", err));
+});
+
+
 window.addEventListener("scroll", () => {
+  const navbar = document.querySelector(".navbar");
   if (window.scrollY > 50) {
-    navbar.style.backgroundColor = "rgba(15, 15, 20, 0.95)";
+    navbar.classList.add("scrolled");
   } else {
-    navbar.style.backgroundColor = "rgba(15, 15, 20, 0.7)";
+    navbar.classList.remove("scrolled");
   }
 });
