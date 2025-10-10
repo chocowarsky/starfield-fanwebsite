@@ -1,15 +1,14 @@
-
 /* ================= NAVBAR ================= */
-/* ================= NAVBAR (ETHENA STYLE) ================= */
-/* === NAVBAR WRAPPER === */
+
 .nav-container {
   display: flex;
   justify-content: center;
   position: fixed;
-  width: 100%;
-  top: 24px;
-  z-index: 1000;
-  pointer-events: none; /* biar efek glow gak ganggu klik */
+
+    top: 24px;
+    width: 100%;
+    z-index: 1000;
+  /* pointer-events: none;  */
 }
 
 /* === NAV INNER (REAL NAVBAR) === */
@@ -55,7 +54,8 @@
 .logo-icon {
   width: 36px;
   height: 36px;
-  filter: drop-shadow(0 0 10px rgba(120, 180, 255, 0.4));
+  filter: invert(100%) drop-shadow(0 0 10px rgba(120, 180, 255, 0.4));
+
 }
 
 .logo span {
