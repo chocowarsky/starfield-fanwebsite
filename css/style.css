@@ -8,23 +8,26 @@
     top: 24px;
     width: 100%;
     z-index: 1000;
-  /* pointer-events: none;  */
+  pointer-events: none;
 }
 
-/* === NAV INNER (REAL NAVBAR) === */
+/* === NAV INNER === */
 .nav-inner {
   pointer-events: all;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(12, 15, 30, 0.7);
-  backdrop-filter: blur(16px) saturate(160%);
-  border: 1px solid rgba(100, 150, 255, 0.25);
-  border-radius: 50px;
-  padding: 14px 36px;
-  width: calc(100% - 160px);
-  max-width: 1280px;
-  margin-inline: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+        margin-inline: auto;
+        padding: 14px 36px;
+    width: calc(100% - 160px);
+    max-width: 1280px;
+
+    background: rgba(12, 15, 30, 0.7);
+    backdrop-filter: blur(16px) saturate(160%);
+    border: 1px solid rgba(100, 150, 255, 0.25);
+    border-radius: 50px;
 
   /* 🌌 Outer glow Starfield */
   box-shadow:
@@ -44,7 +47,7 @@
     inset 0 0 25px rgba(180, 220, 255, 0.08);
 }
 
-/* === LOGO === */
+/* === NAVBAR LOGO === */
 .nav-left .logo {
   display: flex;
   align-items: center;
@@ -68,7 +71,7 @@
 /* === NAV LINKS === */
 .nav-links {
   display: flex;
-  list-style: none;
+  list-style: none;  /* bulet buletnya ngilang */
   gap: 32px;
 }
 
@@ -81,7 +84,7 @@
   position: relative;
 }
 
-.nav-links a::after {
+.nav-links a::after { /*Little blue beach horizon line*/
   content: "";
   position: absolute;
   bottom: -6px;
@@ -90,7 +93,7 @@
   height: 2px;
   background: linear-gradient(90deg, #7aa2ff, #c4e1ff);
   border-radius: 4px;
-  transition: width 0.3s ease;
+  transition: width 0.9s ease;
 }
 
 .nav-links a:hover {
@@ -102,7 +105,7 @@
   width: 100%;
 }
 
-/* === CTA BUTTON === */
+/* ===================== CTA or CALL to aCCCCtion ===================== */
 .cta {
   background: linear-gradient(90deg, #7aa2ff, #c4e1ff);
   color: #000;
