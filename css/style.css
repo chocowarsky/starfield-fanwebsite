@@ -1,13 +1,14 @@
 /* ================= NAVBAR ================= */
 
 .nav-container {
+  pointer-events: none;
   display: flex;
   justify-content: center;
   position: fixed;
-  top: 24px;
-  width: 100%;
-  z-index: 1000;
-  pointer-events: none;
+
+    top: 25px;
+    width: 100%;
+    z-index: 1000;
 }
 
 /* === NAV INNER === */
@@ -18,21 +19,22 @@
   align-items: center;
 
   margin-inline: auto;
-  padding: 14px 36px;
+  padding: 14px 36px;  /* top down right left */
   width: calc(100% - 160px);
   max-width: 1280px;
 
-  background: rgba(12, 15, 30, 0.7);
+  background: rgba(12, 15, 30, 0.5);
   backdrop-filter: blur(16px) saturate(160%);
+  /* filter: blur(16px) saturate(160%); !TRUE */
   border: 1px solid rgba(100, 150, 255, 0.25);
   border-radius: 50px;
 
   box-shadow:
-    0 0 20px rgba(100, 150, 255, 0.15),
-    0 0 40px rgba(60, 100, 255, 0.08),
+    0 0 35px rgba(100, 150, 255, 0.15),
+    0 0 45px rgba(60, 100, 255, 0.08),
     inset 0 0 20px rgba(150, 200, 255, 0.05);
 
-  transition: all 0.4s ease;
+    transition: all 0.4s ease;
 }
 
 .nav-inner:hover {
@@ -121,11 +123,12 @@
 /* ================= HERO SECTION ================= */
 .hero {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   text-align: center;
   height: 100vh;
   padding: 0 20px;
+  padding-right: 60px;
   position: relative;
   overflow: hidden;
 }
@@ -151,8 +154,11 @@
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  filter: brightness(0.5) saturate(120%) contrast(110%);
+    filter: brightness(1) saturate(120%) contrast(110%);
 }
+
+/* .hero-content {
+} */
 
 .btn {
   display: inline-block;
