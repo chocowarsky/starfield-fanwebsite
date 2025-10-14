@@ -175,137 +175,13 @@
   background: #22c55e;
 }
 
-/* ================= FEATURES SECTION ================= */
-.features {
-  display: flex;
-  justify-content: space-around;
-  padding: 120px 10%;
-  background: #111217;
-  flex-wrap: wrap;
-  gap: 50px;
-}
-
-.feature {
-  max-width: 300px;
-  text-align: center;
-  color: #e4e8ff;
-}
-
-.feature h3 {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-  color: #9cbcff;
-}
-
-.feature p {
-  font-size: 1rem;
-  opacity: 0.8;
-}
-
-/* ================= FEATURE CARDS ================= */
-.features {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 24px;
-  padding: 120px 5%;
-  background: #0b0c10;
-}
-
-.feature-card {
-  width: 260px;
-  height: 340px;
-  background: rgba(20, 25, 40, 0.6);
-  border: 1px solid rgba(100, 150, 255, 0.15);
-  border-radius: 24px;
-  backdrop-filter: blur(16px) saturate(180%);
-  box-shadow:
-    0 0 20px rgba(100, 150, 255, 0.08),
-    inset 0 0 10px rgba(150, 200, 255, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden;
-  color: #e4e8ff;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.feature-card:hover {
-  transform: translateY(-6px);
-  box-shadow:
-    0 0 30px rgba(120, 180, 255, 0.25),
-    inset 0 0 15px rgba(180, 220, 255, 0.08);
-  border-color: rgba(140, 180, 255, 0.3);
-}
-
-/* Header (ikon + teks) */
-.feature-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.feature-icon {
-  width: 32px;
-  height: 32px;
-  filter: drop-shadow(0 0 8px rgba(120, 180, 255, 0.4));
-}
-
-.feature-header h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  color: #bcd5ff;
-}
-
-.feature-header p {
-  font-size: 0.8rem;
-  opacity: 0.8;
-}
-
-/* Graph placeholder */
-.feature-graph {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.feature-graph img {
-  width: 100%;
-  height: 100px;
-  object-fit: contain;
-  opacity: 0.8;
-}
-
-/* Footer */
-.feature-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.9rem;
-}
-
-.feature-footer .value {
-  font-weight: 600;
-  color: #cde0ff;
-}
-
-.feature-footer .tag {
-  background: rgba(120, 180, 255, 0.2);
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  color: #a4c8ff;
-}
-
+/* ================= FEATURES SCROLL ================= */
 .features-scroll {
   position: relative;
   overflow: hidden;
   width: 100%;
-  background: #080b12;
-  padding: 60px 0;
+  background: radial-gradient(circle at center, #0b0d18 0%, #06070d 100%);
+  padding: 80px 0;
 }
 
 .scroll-track {
@@ -315,25 +191,50 @@
 }
 
 .feature-card {
-  width: 260px;
-  height: 340px;
   flex-shrink: 0;
-  background: rgba(20, 25, 40, 0.6);
+  width: 280px;
+  height: 340px;
+  padding: 24px;
+  background: rgba(20, 25, 40, 0.65);
   border: 1px solid rgba(100, 150, 255, 0.15);
-  border-radius: 24px;
-  backdrop-filter: blur(16px) saturate(180%);
+  border-radius: 20px;
+  backdrop-filter: blur(18px) saturate(180%);
   box-shadow:
-    0 0 20px rgba(100, 150, 255, 0.08),
+    0 0 25px rgba(100, 150, 255, 0.08),
     inset 0 0 10px rgba(150, 200, 255, 0.05);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #e4e8ff;
-  font-weight: 600;
-  font-size: 1.1rem;
+  color: #dbe4ff;
+  text-align: left;
+  transition: all 0.3s ease;
 }
 
-/* Animasi scroll horizontal */
+.feature-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(140, 180, 255, 0.35);
+  box-shadow:
+    0 0 30px rgba(120, 180, 255, 0.25),
+    inset 0 0 20px rgba(180, 220, 255, 0.08);
+}
+
+.feature-card h3 {
+  font-size: 1.2rem;
+  color: #bcd5ff;
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px rgba(120, 180, 255, 0.3);
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+/* Infinite scroll animation */
+@keyframes scrollLoop {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Animasi scroll horizontal
 @keyframes scrollLoop {
   0% {
     transform: translateX(0);
@@ -341,7 +242,7 @@
   100% {
     transform: translateX(-50%);
   }
-}
+} */
 
 
 
