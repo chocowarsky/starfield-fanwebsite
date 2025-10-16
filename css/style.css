@@ -220,12 +220,6 @@
   padding: 80px 0;
 }
 
-.scroll-track {
-  display: flex;
-  gap: 24px;
-  animation: scrollLoop 0.3s linear infinite;
-}
-
 .feature-card {
   flex-shrink: 0;
   width: 280px;
@@ -264,23 +258,22 @@
   line-height: 1.5;
 }
 
-/* Infinite scroll animation */
-/* @keyframes scrollLoop {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-} */
+.infinite-scroll {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  background: transparent;
+  padding: 40px 0;
+}
 
-/* Animasi scroll horizontal
-@keyframes scrollLoop {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-} */
-
-
+.scroll-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  transition: transform 0.1s linear;
+  will-change: transform;
+  cursor: grab;
+}
 
 /* ================= FOOTER ================= */
 footer {
@@ -332,16 +325,4 @@ footer {
     align-items: center;
     padding: 80px 5%;
   }
-}
-.features-scroll::before {
-  content: "";
-  position: absolute;
-  top: -80px; /* posisi naik sedikit ke hero */
-  left: 0;
-  width: 100%;
-  height: 120px;
-  background: linear-gradient(to bottom, rgba(10, 10, 25, 0.8), transparent);
-  backdrop-filter: blur(16px);
-  z-index: 1;
-  pointer-events: none;
 }

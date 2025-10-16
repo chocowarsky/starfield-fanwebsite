@@ -26,60 +26,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Efek fade navbar saat scroll (setelah navbar dimuat)
       const navbar = document.querySelector(".navbar");
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-          navbar.style.backgroundColor = "rgba(15, 15, 20, 0.95)";
-        } else {
-          navbar.style.backgroundColor = "rgba(15, 15, 20, 0.7)";
-        }
-      });
     })
     .catch(err => console.error("Navbar failed to load:", err));
 });
 
+const scrollTrack = document.getElementById('scroll-track');
+const cards = Array.from(scrollTrack.children);
 
-window.addEventListener("scroll", () => {
-  const navbar = document.querySelector(".navbar");
-  if (window.scrollY > 50) {
-    navbar.classList.add("scrolled");
-  } else {
-    navbar.classList.remove("scrolled");
-  }
+// Gandakan isi track untuk loop seamless
+cards.forEach(card => {
+  const clone = card.cloneNode(true);
+  scrollTrack.appendChild(clone);
 });
 
-// infinite cardto
+let position = 0;
+let speed = 0.5; // ubah untuk kontrol kecepatan
+let isPaused = false;
 
-document.addEventListener("DOMContentLoaded", () => {
-  const track = document.querySelector(".scroll-track");
-  let scrollSpeed = 1; // pixel per frame
-  let position = 0;
-
-  function animateScroll() {
-    position -= scrollSpeed;
-    track.style.transform = `translateX(${position}px)`;
-
-    const firstCard = track.firstElementChild;
-    const trackWidth = track.scrollWidth;
-    const firstCardWidth = firstCard.offsetWidth + 24; // include gap
-
-    // kalau card pertama sudah lewat dari layar kiri, pindahkan ke belakang
-    if (Math.abs(position) >= firstCardWidth) {
-      track.appendChild(firstCard);
-      position += firstCardWidth; // reset posisi biar halus
+function animateScroll() {
+  if (!isPaused) {
+    position -= speed;
+    if (Math.abs(position) >= scrollTrack.scrollWidth / 2) {
+      position = 0;
     }
-
-    requestAnimationFrame(animateScroll);
+    scrollTrack.style.transform = `translateX(${position}px)`;
   }
+  requestAnimationFrame(animateScroll);
+}
 
-  animateScroll();
+animateScroll();
+
+// Pause ketika di-hover
+scrollTrack.addEventListener('mouseenter', () => {
+  isPaused = true;
 });
 
-// let paused = false;
-
-// track.addEventListener("mouseenter", () => (paused = true));
-// track.addEventListener("mouseleave", () => (paused = false));
-
-// function animateScroll() {
-//   if (!paused) position -= scrollSpeed;
-//   track.style.transform = `translateX(${position}px)`;
-// }
+// Lanjut lagi saat mouse keluar
+scrollTrack.addEventListener('mouseleave', () => {
+  isPaused = false;
+});
