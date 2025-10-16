@@ -46,3 +46,40 @@ window.addEventListener("scroll", () => {
     navbar.classList.remove("scrolled");
   }
 });
+
+// infinite cardto
+
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".scroll-track");
+  let scrollSpeed = 1; // pixel per frame
+  let position = 0;
+
+  function animateScroll() {
+    position -= scrollSpeed;
+    track.style.transform = `translateX(${position}px)`;
+
+    const firstCard = track.firstElementChild;
+    const trackWidth = track.scrollWidth;
+    const firstCardWidth = firstCard.offsetWidth + 24; // include gap
+
+    // kalau card pertama sudah lewat dari layar kiri, pindahkan ke belakang
+    if (Math.abs(position) >= firstCardWidth) {
+      track.appendChild(firstCard);
+      position += firstCardWidth; // reset posisi biar halus
+    }
+
+    requestAnimationFrame(animateScroll);
+  }
+
+  animateScroll();
+});
+
+let paused = false;
+
+track.addEventListener("mouseenter", () => (paused = true));
+track.addEventListener("mouseleave", () => (paused = false));
+
+function animateScroll() {
+  if (!paused) position -= scrollSpeed;
+  track.style.transform = `translateX(${position}px)`;
+}
