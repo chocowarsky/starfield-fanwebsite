@@ -74,12 +74,12 @@ document.addEventListener("DOMContentLoaded", () => {
   animateScroll();
 });
 
-let paused = false;
+// let paused = false;
 
-track.addEventListener("mouseenter", () => (paused = true));
-track.addEventListener("mouseleave", () => (paused = false));
+// track.addEventListener("mouseenter", () => (paused = true));
+// track.addEventListener("mouseleave", () => (paused = false));
 
-function animateScroll() {
-  if (!paused) position -= scrollSpeed;
-  track.style.transform = `translateX(${position}px)`;
-}
+// function animateScroll() {
+//   if (!paused) position -= scrollSpeed;
+//   track.style.transform = `translateX(${position}px)`;
+// }
