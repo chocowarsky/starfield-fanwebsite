@@ -341,12 +341,12 @@ footer {
   perspective: 1000px;
 }
 
-/* 🔮 Background image layer */
+
 .planet-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("../asset/img/planet_mars.jpg") center/cover no-repeat;
+  background: var(--bg) center/cover no-repeat;
   transition: transform 0.7s ease, filter 0.6s ease;
   z-index: 0;
 }
@@ -389,7 +389,6 @@ footer {
   border-radius: 20px;
   padding: 20px 24px;
   color: #fff;
-  font-family: "Inter", sans-serif;
   box-shadow: 0 0 12px rgba(255,255,255,0.05),
               inset 0 1px 1px rgba(255,255,255,0.2);
   border: 1px solid rgba(255,255,255,0.15);
@@ -496,4 +495,3 @@ footer {
 .planet-card:hover {
   animation-play-state: running; /* start breathing when hovered */
 }
-                                        
