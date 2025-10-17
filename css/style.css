@@ -326,3 +326,174 @@ footer {
     padding: 80px 5%;
   }
 }
+/* 🌌 Enhanced Planet Card — Futuristic Neon Version */
+.planet-card {
+  position: relative;
+  width: 350px;
+  height: 520px;
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
+  perspective: 1000px;
+}
+
+/* 🔮 Background image layer */
+.planet-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../asset/img/planet_mars.jpg") center/cover no-repeat;
+  transition: transform 0.7s ease, filter 0.6s ease;
+  z-index: 0;
+}
+
+/* 🌠 Neon gradient overlay (parallax glow) */
+.planet-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 80%, rgba(255,0,180,0.25), transparent 70%),
+              radial-gradient(circle at 80% 20%, rgba(0,190,255,0.25), transparent 70%);
+  mix-blend-mode: screen;
+  opacity: 0.6;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+/* hover effects */
+.planet-card:hover::before {
+  transform: scale(1.08) rotateX(4deg);
+  filter: brightness(1.08);
+}
+
+.planet-card:hover::after {
+  opacity: 0.85;
+}
+
+.planet-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55),
+              0 0 45px rgba(0, 195, 255, 0.2);
+}
+
+/* 🌫 Glassmorphism Info Box */
+.planet-info {
+  position: relative;
+  z-index: 3;
+  background: linear-gradient(180deg, rgba(10,10,15,0.55) 0%, rgba(5,5,10,0.9) 100%);
+  backdrop-filter: blur(16px) saturate(160%);
+  border-radius: 20px;
+  padding: 20px 24px;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  box-shadow: 0 0 12px rgba(255,255,255,0.05),
+              inset 0 1px 1px rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: all 0.4s ease;
+}
+
+/* 💡 subtle inner neon reflection on hover */
+.planet-card:hover .planet-info {
+  box-shadow: 0 0 18px rgba(0, 180, 255, 0.15),
+              inset 0 1px 3px rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+/* ✨ Tags */
+.planet-tag {
+  position: absolute;
+  top: 16px;
+  background: rgba(255,255,255,0.9);
+  color: #000;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-right: 8px;
+  z-index: 4;
+  transition: transform 0.3s ease;
+}
+
+.planet-card:hover .planet-tag {
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* 🪐 Texts */
+.planet-info h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+.planet-info p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.45;
+}
+
+/* 🧭 Button */
+.planet-btn {
+  margin-top: 12px;
+  background: rgba(255,255,255,0.08);
+  border: none;
+  color: white;
+  font-size: 18px;
+  border-radius: 10px;
+  padding: 5px 9px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.planet-btn:hover {
+  background: rgba(255,255,255,0.25);
+  transform: translateY(-1px);
+}
+
+/* 🌈 Optional Neon Edge Glow */
+.planet-card:hover {
+  border: 1px solid rgba(0, 195, 255, 0.25);
+  box-shadow: 0 0 20px rgba(0,195,255,0.15), 0 0 40px rgba(255,0,180,0.15);
+}
+
+/* 🌌 Breathing Neon Border Animation */
+@keyframes breathingGlow {
+  0% {
+    box-shadow:
+      0 0 15px rgba(0, 195, 255, 0.12),
+      0 0 30px rgba(255, 0, 180, 0.08);
+    border-color: rgba(0, 195, 255, 0.15);
+  }
+  50% {
+    box-shadow:
+      0 0 25px rgba(0, 195, 255, 0.25),
+      0 0 55px rgba(255, 0, 180, 0.18);
+    border-color: rgba(255, 0, 180, 0.25);
+  }
+  100% {
+    box-shadow:
+      0 0 15px rgba(0, 195, 255, 0.12),
+      0 0 30px rgba(255, 0, 180, 0.08);
+    border-color: rgba(0, 195, 255, 0.15);
+  }
+}
+
+/* ✨ Apply to card when hovered (soft breathing pulse) */
+.planet-card:hover {
+  animation: breathingGlow 4s ease-in-out infinite;
+}
+
+/* 🌈 Optional: Make glow visible even when not hovered */
+.planet-card {
+  animation: breathingGlow 8s ease-in-out infinite;
+  animation-play-state: paused; /* stop animation by default */
+}
+
+.planet-card:hover {
+  animation-play-state: running; /* start breathing when hovered */
+}
+                                        
