@@ -30,38 +30,47 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch(err => console.error("Navbar failed to load:", err));
 });
 
-const scrollTrack = document.getElementById('scroll-track');
+// === Infinite Scroll Planet Cards ===
+const scrollTrack = document.getElementById("scroll-track");
 const cards = Array.from(scrollTrack.children);
 
-// Gandakan isi track untuk loop seamless
-cards.forEach(card => {
+// Duplikasi isi untuk efek loop halus
+cards.forEach((card) => {
   const clone = card.cloneNode(true);
   scrollTrack.appendChild(clone);
 });
 
+// Variabel animasi
 let position = 0;
-let speed = 0.5; // ubah untuk kontrol kecepatan
+let speed = 1; // kecepatan scroll
 let isPaused = false;
 
-function animateScroll() {
+function loopScroll() {
   if (!isPaused) {
     position -= speed;
-    if (Math.abs(position) >= scrollTrack.scrollWidth / 2) {
+
+    // Hitung total lebar set pertama (sebelum clone)
+    const firstSetWidth = scrollTrack.scrollWidth / 2;
+
+    // Reset posisi kalau udah lewat set pertama
+    if (Math.abs(position) >= firstSetWidth) {
       position = 0;
     }
+
     scrollTrack.style.transform = `translateX(${position}px)`;
   }
-  requestAnimationFrame(animateScroll);
+
+  requestAnimationFrame(loopScroll);
 }
 
-animateScroll();
+loopScroll();
 
-// Pause ketika di-hover
-scrollTrack.addEventListener('mouseenter', () => {
+// Pause saat di-hover
+scrollTrack.addEventListener("mouseenter", () => {
   isPaused = true;
 });
 
 // Lanjut lagi saat mouse keluar
-scrollTrack.addEventListener('mouseleave', () => {
+scrollTrack.addEventListener("mouseleave", () => {
   isPaused = false;
 });

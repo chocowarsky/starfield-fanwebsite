@@ -268,11 +268,10 @@
 
 .scroll-track {
   display: flex;
-  gap: 1.5rem;
+  gap: 3.5rem;
   width: max-content;
-  transition: transform 0.1s linear;
+  transition: none;
   will-change: transform;
-  cursor: grab;
 }
 
 /* ================= FOOTER ================= */
@@ -329,7 +328,7 @@ footer {
 /* 🌌 Enhanced Planet Card — Futuristic Neon Version */
 .planet-card {
   position: relative;
-  width: 350px;
+  width: 330px;
   height: 520px;
   border-radius: 24px;
   overflow: hidden;
