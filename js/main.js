@@ -74,3 +74,18 @@ scrollTrack.addEventListener("mouseenter", () => {
 scrollTrack.addEventListener("mouseleave", () => {
   isPaused = false;
 });
+
+// FACTION SCROLL ANIMATION
+const factions = document.querySelectorAll('.faction');
+
+function revealFactions() {
+  factions.forEach(faction => {
+    const rect = faction.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 150) {
+      faction.classList.add('visible');
+    }
+  });
+}
+
+window.addEventListener('scroll', revealFactions);
+revealFactions();

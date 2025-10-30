@@ -12,32 +12,31 @@
 
     <!-- CSS -->
      <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/factions.css">
 
     <!-- JS -->
     <script src="../js/main.js" defer></script>
   </head>
 
   <body>
+<!-- Header -->
+<header class="navbar" id="navbar"></header>
 
-      <!-- Header -->
-      <header class="navbar" id="navbar"></header>
+<!-- Hero Section -->
+<section class="hero fade-up">
+    <video auwtoplay muted loop playsinline class="hero-video">
+        <source src="../asset/video/Starfield_Launch_Bnet_Gameplay_1920x650-01.mp4" type="video/mp4">
+    </video>
+    <!-- Hero Content -->
+    <div class="hero-content">
+        <h1>The ultimate Space Exploration</h1>
+        <p>Lorem, ipsum, sonos, drakos, chronos</p>
+        <!-- <a href="#" class="btn">Explore</a> -->
+    </div>
+</section>
 
-      <!-- Hero Section -->
-      <section class="hero fade-up">
-          <video autoplay muted loop playsinline class="hero-video">
-              <source src="../asset/video/Starfield_Launch_Bnet_Gameplay_1920x650-01.mp4" type="video/mp4">
-            </video>
-            <!-- Hero Content -->
-            <div class="hero-content">
-                <h1>The ultimate Space Exploration</h1>
-                <p>Lorem, ipsum, sonos, drakos, chronos</p>
-                <!-- <a href="#" class="btn">Explore</a> -->
-            </div>
-        </section>
-
-        <!-- Features -->
-
+<!-- Features -->
 <section class="features-scroll">
 <!-- <img src="../asset/img/card-features.jpg" alt="" class="features-bg"> -->
 <div class="scroll-track" id="scroll-track">
@@ -133,11 +132,66 @@
 </div>
 
   </div>
-
 </section>
+
+<!-- Factions Section -->
+<section class="factions">
+  <h2 class="section-title">Choose Your Allegiance</h2>
+
+  <!-- United Colonies -->
+  <div class="faction">
+    <div class="faction-image">
+      <img src="../asset/img/United_Colonies_Emblem.webp" alt="United Colonies">
+    </div>
+    <div class="faction-info">
+      <h3>United Colonies</h3>
+      <p>The United Colonies represent order, authority, and the structured expansion of humanity among the stars.</p>
+      <button class="join-btn">Join UC</button>
+    </div>
+  </div>
+
+  <!-- Freestar Collective -->
+  <div class="faction reverse">
+    <div class="faction-image">
+      <img src="../asset/img/Freestar_Collective_Logo.webp" alt="Freestar Collective">
+    </div>
+    <div class="faction-info">
+      <h3>Freestar Collective</h3>
+      <p>A confederation of free worlds valuing independence and the spirit of exploration beyond any law.</p>
+      <button class="join-btn">Join Freestar</button>
+    </div>
+  </div>
+
+  <!-- Ryujin Industries -->
+  <div class="faction">
+    <div class="faction-image">
+      <img src="../asset/img/Ryujin_Industries_Logo.webp" alt="Ryujin Industries">
+    </div>
+    <div class="faction-info">
+      <h3>Ryujin Industries</h3>
+      <p>A powerful corporate faction where ambition meets innovation — climb the ladder or get left behind.</p>
+      <button class="join-btn">Join Ryujin</button>
+    </div>
+  </div>
+
+  <!-- Crimson Fleet -->
+  <div class="faction reverse">
+    <div class="faction-image">
+      <img src="../asset/img/Crimson_fleet.webp" alt="Crimson Fleet">
+    </div>
+    <div class="faction-info">
+      <h3>Crimson Fleet</h3>
+      <p>A ruthless band of space pirates, loyal only to credits and chaos. Join if you dare.</p>
+      <button class="join-btn">Join Crimson</button>
+    </div>
+  </div>
+</section>
+
+
+
     <!-- Footer -->
-    <footer>
+    <!-- <footer>
       <p>© 2025 WebsiteA. All rights reserved.</p>
-    </footer>
+    </footer> -->
   </body>
 </html>

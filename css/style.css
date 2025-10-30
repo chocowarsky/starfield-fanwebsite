@@ -22,6 +22,7 @@
   padding: 14px 36px;  /* top down right left */
   width: calc(100% - 160px);
   max-width: 1280px;
+  height: 80px;
 
   background: rgba(12, 15, 30, 0.5);
   backdrop-filter: blur(16px) saturate(160%);
@@ -54,9 +55,10 @@
 }
 
 .logo-icon {
-  width: 36px;
-  height: 36px;
+  width: auto;
+  height: 50px;
   filter: invert(100%) drop-shadow(0 0 10px rgba(120, 180, 255, 0.4));
+
 }
 
 .logo span {
@@ -155,6 +157,7 @@
   object-fit: cover;
   z-index: -1;
     filter: brightness(1) saturate(120%) contrast(110%);
+    mask-image: linear-gradient(to bottom, white 90%, transparent 100%);
 }
 
 /* .hero-content {
@@ -364,10 +367,17 @@ footer {
 }
 
 /* hover effects */
-.planet-card:hover::before {
+/* .planet-card:hover::before {
   transform: scale(1.08) rotateX(4deg);
   filter: brightness(1.08);
+} */
+
+.planet-card:hover::before {
+  transform: scale(1.15);
+  filter: brightness(1.15) saturate(1.2);
+  transition: transform 0.6s ease, filter 0.6s ease;
 }
+
 
 .planet-card:hover::after {
   opacity: 0.85;
@@ -493,4 +503,48 @@ footer {
 
 .planet-card:hover {
   animation-play-state: running; /* start breathing when hovered */
+}
+
+/* === FIX: Infinite Scrolling Layout === */
+.features-scroll {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
+  background: radial-gradient(circle at center, #05060a 0%, #0b0d15 100%);
+}
+
+.scroll-track {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  width: max-content;
+  transform: translateX(0);
+  will-change: transform;
+}
+
+/* Responsif: biar card tetap enak di mobile */
+@media (max-width: 768px) {
+  .planet-card {
+    width: 260px;
+    height: 440px;
+  }
+}
+
+/* Hover animation improvement — smoother & stable */
+.planet-card:hover::before {
+  transform: scale(1.2);
+  filter: brightness(1.2) saturate(1.2);
+  transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.6s ease;
+}
+
+/* Extra subtle zoom-out rebound ketika hover selesai */
+.planet-card {
+  transition: transform 0.4s ease-in-out;
+}
+
+.planet-card:hover {
+  transform: scale(1.03) translateY(-8px);
 }
