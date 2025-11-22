@@ -1,0 +1,109 @@
+/* ===============================
+   📰 NEWS PAGE
+   =============================== */
+
+.news-page {
+  padding: 140px 10% 100px 10%; /* Padding atas lebih banyak untuk navbar */
+  background: radial-gradient(ellipse at top, #0b0d17, #03040a 70%);
+  min-height: 100vh;
+  /* border: 1px solid blue; */
+}
+
+.news-container {
+  max-width: 100dvw;
+  margin-inline: auto;
+  /* border: 1px solid red; */
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-top: -30px; /* Lebih dekat ke judul */
+  /* border: 1px solid red; */
+}
+
+/* === News Card === */
+.news-card {
+  display: flex;
+  background: #0d101a;
+  border: 1px solid rgba(100, 150, 255, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(100, 150, 255, 0.1);
+  border-color: rgba(100, 150, 255, 0.3);
+  cursor: pointer;
+}
+
+/* Gambar Kartu */
+.news-card-image {
+  flex: 0 0 300px; /* Lebar gambar kaku 300px */
+  max-height: 220px;
+}
+
+.news-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.9);
+}
+
+/* Konten Kartu (Teks) */
+.news-card-content {
+  padding: 25px 30px;
+  flex: 1;
+}
+
+.news-card-date {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #9fb7ff;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.news-card-content h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #e0e8ff;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.news-card-content p {
+  font-size: 0.95rem;
+  color: #c1c1d1;
+  line-height: 1.6;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .news-page {
+    padding: 120px 5% 80px 5%;
+  }
+
+  .news-card {
+    flex-direction: column; /* Tumpuk vertikal di HP */
+  }
+
+  .news-card-image {
+    flex-basis: 200px; /* Tinggi gambar di HP */
+    width: 100%;
+    max-height: 200px;
+  }
+
+  .news-card-content {
+    padding: 20px;
+  }
+
+  .news-card-content h3 {
+    font-size: 1.2rem;
+  }
+}

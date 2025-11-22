@@ -1,4 +1,8 @@
-// Fade-in effect saat elemen masuk ke viewport
+// ===============================
+// 🌌 MAIN.JS – STARFIELD PROJECT
+// ===============================
+
+// === Fade-in effect saat elemen masuk ke viewport ===
 const faders = document.querySelectorAll(".fade-up");
 
 const appearOnScroll = new IntersectionObserver(
@@ -13,79 +17,84 @@ const appearOnScroll = new IntersectionObserver(
   { threshold: 0.2 }
 );
 
-faders.forEach((el) => {
-  appearOnScroll.observe(el);
-});
+faders.forEach((el) => appearOnScroll.observe(el));
 
-// Load Navbar dynamically
-document.addEventListener("DOMContentLoaded", () => {
-  fetch("../pages/navbar.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("navbar").innerHTML = data;
 
-      // Efek fade navbar saat scroll (setelah navbar dimuat)
-      const navbar = document.querySelector(".navbar");
-    })
-    .catch(err => console.error("Navbar failed to load:", err));
-});
+// ===============================
+// === Navbar Auto-Move on Scroll ===
+// ===============================
+let lastScrollTop = 0; // Menyimpan posisi scroll terakhir
 
-// === Infinite Scroll Planet Cards ===
-const scrollTrack = document.getElementById("scroll-track");
-const cards = Array.from(scrollTrack.children);
+window.addEventListener("scroll", () => {
+  const navContainer = document.querySelector(".nav-container");
 
-// Duplikasi isi untuk efek loop halus
-cards.forEach((card) => {
-  const clone = card.cloneNode(true);
-  scrollTrack.appendChild(clone);
-});
+  if (navContainer) {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-// Variabel animasi
-let position = 0;
-let speed = 1; // kecepatan scroll
-let isPaused = false;
-
-function loopScroll() {
-  if (!isPaused) {
-    position -= speed;
-
-    // Hitung total lebar set pertama (sebelum clone)
-    const firstSetWidth = scrollTrack.scrollWidth / 2;
-
-    // Reset posisi kalau udah lewat set pertama
-    if (Math.abs(position) >= firstSetWidth) {
-      position = 0;
+    if (scrollTop > lastScrollTop && scrollTop > 150) {
+      navContainer.classList.add("nav-scrolled");
+    } else {
+      navContainer.classList.remove("nav-scrolled");
     }
 
-    scrollTrack.style.transform = `translateX(${position}px)`;
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   }
-
-  requestAnimationFrame(loopScroll);
-}
-
-loopScroll();
-
-// Pause saat di-hover
-scrollTrack.addEventListener("mouseenter", () => {
-  isPaused = true;
 });
 
-// Lanjut lagi saat mouse keluar
-scrollTrack.addEventListener("mouseleave", () => {
-  isPaused = false;
+
+// ===============================
+// === Load Konten Dinamis (Navbar & Footer) & Event Listeners ===
+// ===============================
+document.addEventListener("DOMContentLoaded", () => {
+
+  // Definisikan file HTML yang akan kita ambil
+  const fetchNavbar = fetch("../pages/navbar.html").then(res => res.text());
+  const fetchFooter = fetch("../pages/footer.html").then(res => res.text());
+
+  // Gunakan Promise.all untuk mengambil keduanya sekaligus
+  Promise.all([fetchNavbar, fetchFooter])
+    .then(([navbarData, footerData]) => {
+
+      // 1. Inject HTML ke placeholder-nya
+      document.getElementById("navbar").innerHTML = navbarData;
+      document.getElementById("footer-placeholder").innerHTML = footerData;
+
+      // 2. Setup Event Listener untuk Hamburger (SETELAH navbar di-load)
+      const menuToggle = document.getElementById("menu-toggle");
+      const navLinks = document.getElementById("nav-links");
+
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener("click", () => {
+          navLinks.classList.toggle("active");
+          menuToggle.classList.toggle("active");
+        });
+      }
+
+      // 3. Setup Event Listener untuk Tab Faction
+      const factionTabs = document.querySelectorAll(".faction-tab-btn");
+      const factionContents = document.querySelectorAll(".faction-content");
+
+      factionTabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+          const targetId = tab.dataset.factionTab;
+          const targetContent = document.getElementById(`faction-content-${targetId}`);
+
+          factionTabs.forEach(t => t.classList.remove("active"));
+          tab.classList.add("active");
+
+          factionContents.forEach(content => {
+            content.classList.add("hidden");
+            content.classList.remove("active");
+          });
+
+          if (targetContent) {
+            targetContent.classList.remove("hidden");
+            targetContent.classList.add("active");
+          }
+        });
+      });
+      // (Jika ada listener lain, letakkan di sini)
+
+    })
+    .catch((err) => console.error("Failed to load components:", err));
 });
-
-// FACTION SCROLL ANIMATION
-const factions = document.querySelectorAll('.faction');
-
-function revealFactions() {
-  factions.forEach(faction => {
-    const rect = faction.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 150) {
-      faction.classList.add('visible');
-    }
-  });
-}
-
-window.addEventListener('scroll', revealFactions);
-revealFactions();

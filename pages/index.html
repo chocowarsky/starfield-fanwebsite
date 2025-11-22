@@ -1,197 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Starfield</title>
 
-    <!-- Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
-     <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/planets.css">
     <link rel="stylesheet" href="../css/factions.css">
+    <link rel="stylesheet" href="../css/footer.css">
 
-    <!-- JS -->
     <script src="../js/main.js" defer></script>
-  </head>
+    <script src="../js/infinite-planet.js" defer></script>
+</head>
 
-  <body>
-<!-- Header -->
-<header class="navbar" id="navbar"></header>
+<body>
+    <header class="navbar" id="navbar"></header>
 
-<!-- Hero Section -->
-<section class="hero fade-up">
-    <video auwtoplay muted loop playsinline class="hero-video">
+    <section class="hero fade-up">
+    <video autoplay muted loop playsinline class="hero-video">
         <source src="../asset/video/Starfield_Launch_Bnet_Gameplay_1920x650-01.mp4" type="video/mp4">
     </video>
-    <!-- Hero Content -->
     <div class="hero-content">
-        <h1>The ultimate Space Exploration</h1>
-        <p>Lorem, ipsum, sonos, drakos, chronos</p>
-        <!-- <a href="#" class="btn">Explore</a> -->
+        <h1>The Ultimate Space Exploration</h1>
+        <!-- <p>Lorem, ipsum, sonos, drakos, chronos</p> -->
     </div>
-</section>
+    </section>
 
-<!-- Features -->
-<section class="features-scroll">
-<!-- <img src="../asset/img/card-features.jpg" alt="" class="features-bg"> -->
-<div class="scroll-track" id="scroll-track">
+    <section class="features-scroll">
+    <div class="scroll-track" id="scroll-track">
+        <div class="planet-card" style="--bg: url('../asset/img/planets/planet_jemison.webp')">
+        <div class="planet-info">
+            <h3>Jemison</h3>
+            <p>Home to New Atlantis, the capital of the United Colonies — a lush and thriving planet where humanity’s future begins.</p>
+            <button class="planet-btn">☰</button>
+        </div>
+        </div>
 
-<!-- Jemison -->
-<div class="planet-card" style="--bg: url('../asset/img/planet_jemison.webp')">
-  <div class="planet-info">
-    <h3>Jemison</h3>
-    <p>Home to New Atlantis, the capital of the United Colonies — a lush and thriving planet where humanity’s future begins.</p>
-    <button class="planet-btn">☰</button>
-  </div>
-</div>
+        <div class="planet-card" style="--bg: url('../asset/img/planets/planet_akila.webp')">
+        <div class="planet-info">
+            <h3>Akila</h3>
+            <p>The stronghold of the Freestar Collective, known for its rugged frontier spirit and the fierce Ashta beasts roaming the wilds.</p>
+            <button class="planet-btn">☰</button>
+        </div>
+        </div>
 
-<!-- Akila -->
-<div class="planet-card" style="--bg: url('../asset/img/planet_akila.webp')">
-  <div class="planet-info">
-    <h3>Akila</h3>
-    <p>The stronghold of the Freestar Collective, known for its rugged frontier spirit and the fierce Ashta beasts roaming the wilds.</p>
-    <button class="planet-btn">☰</button>
-  </div>
-</div>
 
-<!-- Eridani II -->
-<div class="planet-card" style="--bg: url('../asset/img/planet_eridani-cropped.jpg')">
-  <div class="planet-info">
-    <h3>Eridani II</h3>
-    <p>A distant and mysterious world orbiting a bright blue star. Its surface hides ancient ruins of an unknown origin.</p>
-    <button class="planet-btn">☰</button>
-  </div>
-</div>
+        <div class="planet-card" style="--bg: url('../asset/img/planets/planet_gagarin.png')">
+        <div class="planet-info">
+            <h3>Gagarin</h3>
+            <p>A key industrial and research hub in the Alpha Centauri system, known for its abundant flora and fauna.</p>
+            <button class="planet-btn">☰</button>
+        </div>
+        </div>
 
-<!-- Gagarin -->
-<div class="planet-card" style="--bg: url('../asset/img/planet_gagarin.PNG')">
-  <div class="planet-info">
-    <h3>Gagarin</h3>
-    <p>An industrial mining planet named after one of Earth’s earliest space pioneers. Rich in minerals but harsh in climate.</p>
-    <button class="planet-btn">☰</button>
-  </div>
-</div>
 
-<!-- Mars -->
-<div class="planet-card" style="--bg: url('../asset/img/planet_mars.jpg')">
-  <div class="planet-info">
-    <h3>Mars</h3>
-    <p>The red planet, first colonized centuries ago. Now a hub for trade routes and old mining operations across the Sol system.</p>
-    <button class="planet-btn">☰</button>
-  </div>
-</div>
+        <div class="planet-card" style="--bg: url('../asset/img/planets/planet_nesoi.webp')">
+        <div class="planet-info">
+            <h3>Nesoi</h3>
+            <p>Located in the Olympus system, this water-covered planet is famous for hosting the exclusive, pleasure-driven city of Neon.</p>
+            <button class="planet-btn">☰</button>
+        </div>
+        </div>
 
-<!-- Nesoi -->
-<div class="planet-card" style="--bg: url('../asset/img/planet_nesoi.webp')">
-  <div class="planet-info">
-    <h3>Nesoi</h3>
-    <p>A world of endless oceans and scattered islands. Few settlers remain, studying its unique aquatic ecosystems.</p>
-    <button class="planet-btn">☰</button>
-  </div>
-</div>
 
-<!-- Gagarin -->
-<div class="planet-card" style="--bg: url('../asset/img/planet_gagarin.png')">
-  <div class="planet-info">
-    <h3>Gagarin</h3>
-    <p>Gas giant of immense gravity and storms. Once unreachable, now used for research and energy harvesting from its atmosphere.</p>
-    <button class="planet-btn">☰</button>
-  </div>
-</div>
+        <div class="planet-card" style="--bg: url('../asset/img/planets/planet_olivas.webp')">
+        <div class="planet-info">
+            <h3>Olivas</h3>
+            <p>A rocky moon orbiting Bessel III, notable for being the location of 'The Eye,' Constellation's deep space starstation.</p>
+            <button class="planet-btn">☰</button>
+        </div>
+        </div>
 
-<!-- Titan
-<div class="planet-card" style="--bg: url('../asset/img/planet_titan.webp')">
-  <div class="planet-info">
-    <h3>Titan</h3>
-    <p>Saturn’s largest moon, shrouded in haze. Human outposts study its methane seas and icy landscapes.</p>
-    <button class="planet-btn">☰</button>
-  </div>
-</div>
- -->
-<!-- Olivas -->
-<div class="planet-card" style="--bg: url('../asset/img/planet_olivas.webp')">
-  <div class="planet-info">
-    <h3>Olivas</h3>
-    <p>Once home to a thriving mining colony, now a ghost planet — only remnants of civilization remain under its frozen crust.</p>
-    <button class="planet-btn">☰</button>
-  </div>
-</div>
 
-<!-- Tidacha I -->
-<div class="planet-card" style="--bg: url('../asset/img/planet_tidacha_1.jpg')">
-  <div class="planet-info">
-    <h3>Tidacha I</h3>
-    <p>A tropical exoplanet bathed in twin suns. Known for rare flora used in advanced medicine and biotechnology.</p>
-    <button class="planet-btn">☰</button>
-  </div>
-</div>
+        <div class="planet-card" style="--bg: url('../asset/img/planets/planet_tidacha_1.jpg')">
+        <div class="planet-info">
+            <h3>Tidacha I</h3>
+            <p>A harsh, barren planet in the Tidacha system, known for its extreme temperatures and valuable inorganic resources.</p>
+            <button class="planet-btn">☰</button>
+        </div>
+        </div>
 
-  </div>
-</section>
 
-<!-- Factions Section -->
-<section class="factions">
-  <h2 class="section-title">Choose Your Allegiance</h2>
+        <div class="planet-card" style="--bg: url('../asset/img/planets/planet_eridani-cropped.jpg')">
+        <div class="planet-info">
+            <h3>Eridani II</h3>
+            <p>A distant and mysterious world orbiting a bright blue star. Its surface hides ancient ruins of an unknown origin.</p>
+            <button class="planet-btn">☰</button>
+        </div>
+        </div>
 
-  <!-- United Colonies -->
-  <div class="faction">
-    <div class="faction-image">
-      <img src="../asset/img/United_Colonies_Emblem.webp" alt="United Colonies">
+        <div class="planet-card" style="--bg: url('../asset/img/planets/planet_mars.webp')">
+        <div class="planet-info">
+            <h3>Mars</h3>
+            <p>The red planet, first colonized centuries ago. Now a hub for trade routes and old mining operations across the Sol system.</p>
+            <button class="planet-btn">☰</button>
+        </div>
+        </div>
     </div>
-    <div class="faction-info">
-      <h3>United Colonies</h3>
-      <p>The United Colonies represent order, authority, and the structured expansion of humanity among the stars.</p>
-      <button class="join-btn">Join UC</button>
-    </div>
-  </div>
+    </section>
 
-  <!-- Freestar Collective -->
-  <div class="faction reverse">
-    <div class="faction-image">
-      <img src="../asset/img/Freestar_Collective_Logo.webp" alt="Freestar Collective">
-    </div>
-    <div class="faction-info">
-      <h3>Freestar Collective</h3>
-      <p>A confederation of free worlds valuing independence and the spirit of exploration beyond any law.</p>
-      <button class="join-btn">Join Freestar</button>
-    </div>
-  </div>
+    <section class="factions">
+      <h2 class="section-title">Choose Your Allegiance</h2>
 
-  <!-- Ryujin Industries -->
-  <div class="faction">
-    <div class="faction-image">
-      <img src="../asset/img/Ryujin_Industries_Logo.webp" alt="Ryujin Industries">
-    </div>
-    <div class="faction-info">
-      <h3>Ryujin Industries</h3>
-      <p>A powerful corporate faction where ambition meets innovation — climb the ladder or get left behind.</p>
-      <button class="join-btn">Join Ryujin</button>
-    </div>
-  </div>
+      <div class="faction-tabs">
+        <button class="faction-tab-btn active" data-faction-tab="uc">
+          <img src="../asset/img/logo/United_Colonies_Emblem.webp" alt="United Colonies">
+        </button>
+        <button class="faction-tab-btn" data-faction-tab="freestar">
+          <img src="../asset/img/logo/Freestar_Collective_Logo.webp" alt="Freestar Collective">
+        </button>
+        <button class="faction-tab-btn" data-faction-tab="ryujin">
+          <img src="../asset/img/logo/Ryujin_Industries_Logo.webp" alt="Ryujin Industries">
+        </button>
+        <button class="faction-tab-btn" data-faction-tab="crimson">
+          <img src="../asset/img/logo/Crimson_fleet.webp" alt="Crimson Fleet">
+        </button>
+      </div>
 
-  <!-- Crimson Fleet -->
-  <div class="faction reverse">
-    <div class="faction-image">
-      <img src="../asset/img/Crimson_fleet.webp" alt="Crimson Fleet">
-    </div>
-    <div class="faction-info">
-      <h3>Crimson Fleet</h3>
-      <p>A ruthless band of space pirates, loyal only to credits and chaos. Join if you dare.</p>
-      <button class="join-btn">Join Crimson</button>
-    </div>
-  </div>
-</section>
+      <div class="faction-content-wrapper">
 
+        <div class="faction-content active" id="faction-content-uc">
+          <div class="faction-image">
+            <img src="../asset/img/logo/United_Colonies_Emblem.webp" alt="United Colonies">
+          </div>
+          <div class="faction-info">
+            <h3>United Colonies</h3>
+            <p>The United Colonies represent order, authority, and the structured expansion of humanity among the stars.</p>
+            </div>
+        </div>
 
+        <div class="faction-content hidden" id="faction-content-freestar">
+          <div class="faction-image">
+            <img src="../asset/img/logo/Freestar_Collective_Logo.webp" alt="Freestar Collective">
+          </div>
+          <div class="faction-info">
+            <h3>Freestar Collective</h3>
+            <p>A confederation of free worlds valuing independence and the spirit of exploration beyond any law.</p>
+          </div>
+        </div>
 
-    <!-- Footer -->
-    <!-- <footer>
-      <p>© 2025 WebsiteA. All rights reserved.</p>
-    </footer> -->
-  </body>
+        <div class="faction-content hidden" id="faction-content-ryujin">
+          <div class="faction-image">
+            <img src="../asset/img/logo/Ryujin_Industries_Logo.webp" alt="Ryujin Industries">
+          </div>
+          <div class="faction-info">
+            <h3>Ryujin Industries</h3>
+            <p>A powerful corporate faction where ambition meets innovation — climb the ladder or get left behind.</p>
+          </div>
+        </div>
+
+        <div class="faction-content hidden" id="faction-content-crimson">
+          <div class="faction-image">
+            <img src="../asset/img/logo/Crimson_fleet.webp" alt="Crimson Fleet">
+          </div>
+          <div class="faction-info">
+            <h3>Crimson Fleet</h3>
+            <p>A ruthless band of space pirates, loyal only to credits and chaos. Join if you dare.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer class="footer" id="footer-placeholder"></footer>
+
+    </body>
 </html>
+   w

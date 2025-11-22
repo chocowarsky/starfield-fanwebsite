@@ -1,151 +1,16 @@
-/* ================= NAVBAR ================= */
+/* ===============================
+   🌌 STYLE.CSS – STARFIELD MAIN PAGE
+   =============================== */
 
-.nav-container {
-  pointer-events: none;
-  display: flex;
-  justify-content: center;
-  position: fixed;
-
-    top: 25px;
-    width: 100%;
-    z-index: 1000;
-}
-
-/* === NAV INNER === */
-.nav-inner {
-  pointer-events: all;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  margin-inline: auto;
-  padding: 14px 36px;  /* top down right left */
-  width: calc(100% - 160px);
-  max-width: 1280px;
-  height: 80px;
-
-  background: rgba(12, 15, 30, 0.5);
-  backdrop-filter: blur(16px) saturate(160%);
-  /* filter: blur(16px) saturate(160%); !TRUE */
-  border: 1px solid rgba(100, 150, 255, 0.25);
-  border-radius: 50px;
-
-  box-shadow:
-    0 0 35px rgba(100, 150, 255, 0.15),
-    0 0 45px rgba(60, 100, 255, 0.08),
-    inset 0 0 20px rgba(150, 200, 255, 0.05);
-
-    transition: all 0.4s ease;
-}
-
-.nav-inner:hover {
-  background: rgba(20, 25, 50, 0.8);
-  border-color: rgba(140, 180, 255, 0.4);
-  box-shadow:
-    0 0 25px rgba(100, 150, 255, 0.25),
-    0 0 60px rgba(60, 100, 255, 0.12),
-    inset 0 0 25px rgba(180, 220, 255, 0.08);
-}
-
-/* === NAVBAR LOGO === */
-.nav-left .logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo-icon {
-  width: auto;
-  height: 50px;
-  filter: invert(100%) drop-shadow(0 0 10px rgba(120, 180, 255, 0.4));
-
-}
-
-.logo span {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #dbe9ff;
-  text-shadow: 0 0 12px rgba(80, 130, 255, 0.4);
-}
-
-/* === NAV LINKS === */
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 32px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #cbd8ff;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  transition: 0.3s ease;
-  position: relative;
-}
-
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: linear-gradient(90deg, #7aa2ff, #c4e1ff);
-  border-radius: 4px;
-  transition: width 0.9s ease;
-}
-
-.nav-links a:hover {
-  color: #ffffff;
-  text-shadow: 0 0 6px rgba(120, 180, 255, 0.5);
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-/* === CTA Button === */
-.cta {
-  background: linear-gradient(90deg, #7aa2ff, #c4e1ff);
-  color: #000;
-  font-weight: 600;
-  padding: 10px 22px;
-  border-radius: 999px;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-.cta:hover {
-  background: linear-gradient(90deg, #a9c6ff, #e0f0ff);
-  transform: translateY(-1px);
-  box-shadow: 0 0 20px rgba(140, 180, 255, 0.4);
-}
-
-/* ================= HERO SECTION ================= */
+/* ===== HERO SECTION ===== */
 .hero {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  text-align: center;
-  height: 100vh;
-  padding: 0 20px;
-  padding-right: 60px;
   position: relative;
+  height: 100vh;
   overflow: hidden;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  color: #e0ecff;
-  margin-bottom: 20px;
-  text-shadow: 0 0 15px rgba(100, 150, 255, 0.4);
-}
-
-.hero p {
-  font-size: 1.2rem;
-  color: #cfd9ff;
-  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .hero-video {
@@ -155,139 +20,48 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
-    filter: brightness(1) saturate(120%) contrast(110%);
-    mask-image: linear-gradient(to bottom, white 90%, transparent 100%);
+  z-index: 0;
 }
 
-/* .hero-content {
-} */
-
-.btn {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 12px 30px;
-  background: #4ade80;
-  color: #000;
-  font-weight: 600;
-  border-radius: 8px;
-  transition: background 0.3s ease;
-}
-
-.btn:hover {
-  background: #22c55e;
-}
-
-/* ================= FEATURES SCROLL ================= */
-
-.features-bg {
-    /* z-index: -1;
-    position: absolute; */
+.hero::after {
+  content: "";
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* ✅ biar gambar nutup penuh */
-  z-index: -1; /* ✅ taruh di belakang card */
-  opacity: 1; /* efek lembut supaya card tetap jelas */
-  /* filter: brightness(0.8) saturate(120%) blur(2px); */
-
+  height: 200px;
+  background: linear-gradient(to top, #0b0d15 0%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
 }
 
-/* === FEATURE IMAGE === */
-.feature-img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 16px;
-  filter: brightness(0.9) contrast(1.2) saturate(1.1);
-  transition: transform 0.3s ease, filter 0.3s ease;
-  box-shadow: 0 0 18px rgba(100, 150, 255, 0.15);
-}
-
-.feature-card:hover .feature-img {
-  transform: scale(1.03);
-  filter: brightness(1.1) contrast(1.3);
-  box-shadow: 0 0 25px rgba(120, 180, 255, 0.25);
-}
-
-
-.features-scroll {
+.hero-content {
   position: relative;
-  overflow: hidden;
-  width: 100%;
-  /* background: radial-gradient(circle at center, #0b0d18 0%, #06070d 100%); */
-  /* background-color: red; */
-  padding: 80px 0;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
 }
 
-.feature-card {
-  flex-shrink: 0;
-  width: 280px;
-  height: 340px;
-  padding: 24px;
-  background: rgba(20, 25, 40, 0.65);
-  border: 1px solid rgba(100, 150, 255, 0.15);
-  border-radius: 20px;
-  backdrop-filter: blur(18px) saturate(180%);
-  box-shadow:
-    0 0 25px rgba(100, 150, 255, 0.08),
-    inset 0 0 10px rgba(150, 200, 255, 0.05);
-  color: #dbe4ff;
-  text-align: left;
-  transition: all 0.3s ease;
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #ffffff;
+
+  /* ▼▼▼ [TAMBAHAN] Shadow hitam transparan untuk kontras ▼▼▼ */
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-.feature-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(140, 180, 255, 0.35);
-  box-shadow:
-    0 0 30px rgba(120, 180, 255, 0.25),
-    inset 0 0 20px rgba(180, 220, 255, 0.08);
-}
-
-.feature-card h3 {
+.hero-content p {
+  margin-top: 1rem;
   font-size: 1.2rem;
-  color: #bcd5ff;
-  margin-bottom: 10px;
-  text-shadow: 0 0 8px rgba(120, 180, 255, 0.3);
+  color: rgba(255, 255, 255, 0.9); /* Sedikit lebih jelas */
+  letter-spacing: 0.5px;
+
+  /* ▼▼▼ [TAMBAHAN] Shadow tipis untuk kontras ▼▼▼ */
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
-.feature-card p {
-  font-size: 0.95rem;
-  opacity: 0.85;
-  line-height: 1.5;
-}
-
-.infinite-scroll {
-  overflow: hidden;
-  width: 100%;
-  position: relative;
-  background: transparent;
-  padding: 40px 0;
-}
-
-.scroll-track {
-  display: flex;
-  gap: 3.5rem;
-  width: max-content;
-  transition: none;
-  will-change: transform;
-}
-
-/* ================= FOOTER ================= */
-footer {
-  padding: 50px 0;
-  text-align: center;
-  background: #0a0a0e;
-  font-size: 0.9rem;
-  color: #c5c9ff;
-  opacity: 0.7;
-}
-
-/* ================= ANIMATION ================= */
+/* ===== FADE-UP ANIMATION ===== */
 .fade-up {
   opacity: 0;
   transform: translateY(40px);
@@ -297,254 +71,4 @@ footer {
 .fade-up.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 820px) {
-  .nav-inner {
-    flex-direction: column;
-    gap: 12px;
-    padding: 16px 20px;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-
-  .cta {
-    padding: 8px 18px;
-    font-size: 0.9rem;
-  }
-
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-
-  .features {
-    flex-direction: column;
-    align-items: center;
-    padding: 80px 5%;
-  }
-}
-/* 🌌 Enhanced Planet Card — Futuristic Neon Version */
-.planet-card {
-  position: relative;
-  width: 330px;
-  height: 520px;
-  border-radius: 24px;
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  padding: 20px;
-  cursor: pointer;
-  transition: transform 0.45s ease, box-shadow 0.45s ease;
-  perspective: 1000px;
-}
-
-
-.planet-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--bg) center/cover no-repeat;
-  transition: transform 0.7s ease, filter 0.6s ease;
-  z-index: 0;
-}
-
-/* 🌠 Neon gradient overlay (parallax glow) */
-.planet-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 30% 80%, rgba(255,0,180,0.25), transparent 70%),
-              radial-gradient(circle at 80% 20%, rgba(0,190,255,0.25), transparent 70%);
-  mix-blend-mode: screen;
-  opacity: 0.6;
-  transition: opacity 0.4s ease;
-  z-index: 1;
-}
-
-/* hover effects */
-/* .planet-card:hover::before {
-  transform: scale(1.08) rotateX(4deg);
-  filter: brightness(1.08);
-} */
-
-.planet-card:hover::before {
-  transform: scale(1.15);
-  filter: brightness(1.15) saturate(1.2);
-  transition: transform 0.6s ease, filter 0.6s ease;
-}
-
-
-.planet-card:hover::after {
-  opacity: 0.85;
-}
-
-.planet-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55),
-              0 0 45px rgba(0, 195, 255, 0.2);
-}
-
-/* 🌫 Glassmorphism Info Box */
-.planet-info {
-  position: relative;
-  z-index: 3;
-  background: linear-gradient(180deg, rgba(10,10,15,0.55) 0%, rgba(5,5,10,0.9) 100%);
-  backdrop-filter: blur(16px) saturate(160%);
-  border-radius: 20px;
-  padding: 20px 24px;
-  color: #fff;
-  box-shadow: 0 0 12px rgba(255,255,255,0.05),
-              inset 0 1px 1px rgba(255,255,255,0.2);
-  border: 1px solid rgba(255,255,255,0.15);
-  transition: all 0.4s ease;
-}
-
-/* 💡 subtle inner neon reflection on hover */
-.planet-card:hover .planet-info {
-  box-shadow: 0 0 18px rgba(0, 180, 255, 0.15),
-              inset 0 1px 3px rgba(255,255,255,0.2);
-  border: 1px solid rgba(255,255,255,0.25);
-}
-
-/* ✨ Tags */
-.planet-tag {
-  position: absolute;
-  top: 16px;
-  background: rgba(255,255,255,0.9);
-  color: #000;
-  padding: 5px 12px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 600;
-  margin-right: 8px;
-  z-index: 4;
-  transition: transform 0.3s ease;
-}
-
-.planet-card:hover .planet-tag {
-  transform: translateY(-2px) scale(1.05);
-}
-
-/* 🪐 Texts */
-.planet-info h3 {
-  font-size: 1.35rem;
-  font-weight: 600;
-  margin-bottom: 6px;
-  letter-spacing: 0.5px;
-}
-
-.planet-info p {
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.88);
-  line-height: 1.45;
-}
-
-/* 🧭 Button */
-.planet-btn {
-  margin-top: 12px;
-  background: rgba(255,255,255,0.08);
-  border: none;
-  color: white;
-  font-size: 18px;
-  border-radius: 10px;
-  padding: 5px 9px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.planet-btn:hover {
-  background: rgba(255,255,255,0.25);
-  transform: translateY(-1px);
-}
-
-/* 🌈 Optional Neon Edge Glow */
-.planet-card:hover {
-  border: 1px solid rgba(0, 195, 255, 0.25);
-  box-shadow: 0 0 20px rgba(0,195,255,0.15), 0 0 40px rgba(255,0,180,0.15);
-}
-
-/* 🌌 Breathing Neon Border Animation */
-@keyframes breathingGlow {
-  0% {
-    box-shadow:
-      0 0 15px rgba(0, 195, 255, 0.12),
-      0 0 30px rgba(255, 0, 180, 0.08);
-    border-color: rgba(0, 195, 255, 0.15);
-  }
-  50% {
-    box-shadow:
-      0 0 25px rgba(0, 195, 255, 0.25),
-      0 0 55px rgba(255, 0, 180, 0.18);
-    border-color: rgba(255, 0, 180, 0.25);
-  }
-  100% {
-    box-shadow:
-      0 0 15px rgba(0, 195, 255, 0.12),
-      0 0 30px rgba(255, 0, 180, 0.08);
-    border-color: rgba(0, 195, 255, 0.15);
-  }
-}
-
-/* ✨ Apply to card when hovered (soft breathing pulse) */
-.planet-card:hover {
-  animation: breathingGlow 4s ease-in-out infinite;
-}
-
-/* 🌈 Optional: Make glow visible even when not hovered */
-.planet-card {
-  animation: breathingGlow 8s ease-in-out infinite;
-  animation-play-state: paused; /* stop animation by default */
-}
-
-.planet-card:hover {
-  animation-play-state: running; /* start breathing when hovered */
-}
-
-/* === FIX: Infinite Scrolling Layout === */
-.features-scroll {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  padding: 100px 0;
-  display: flex;
-  justify-content: center;
-  background: radial-gradient(circle at center, #05060a 0%, #0b0d15 100%);
-}
-
-.scroll-track {
-  display: flex;
-  align-items: center;
-  gap: 3rem;
-  width: max-content;
-  transform: translateX(0);
-  will-change: transform;
-}
-
-/* Responsif: biar card tetap enak di mobile */
-@media (max-width: 768px) {
-  .planet-card {
-    width: 260px;
-    height: 440px;
-  }
-}
-
-/* Hover animation improvement — smoother & stable */
-.planet-card:hover::before {
-  transform: scale(1.2);
-  filter: brightness(1.2) saturate(1.2);
-  transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.6s ease;
-}
-
-/* Extra subtle zoom-out rebound ketika hover selesai */
-.planet-card {
-  transition: transform 0.4s ease-in-out;
-}
-
-.planet-card:hover {
-  transform: scale(1.03) translateY(-8px);
 }
