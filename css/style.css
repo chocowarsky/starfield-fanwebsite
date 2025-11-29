@@ -46,18 +46,14 @@
   font-size: 4rem;
   font-weight: 700;
   color: #ffffff;
-
-  /* ▼▼▼ [TAMBAHAN] Shadow hitam transparan untuk kontras ▼▼▼ */
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .hero-content p {
   margin-top: 1rem;
   font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.9); /* Sedikit lebih jelas */
+  color: rgba(255, 255, 255, 0.9);
   letter-spacing: 0.5px;
-
-  /* ▼▼▼ [TAMBAHAN] Shadow tipis untuk kontras ▼▼▼ */
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 

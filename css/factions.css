@@ -3,7 +3,7 @@
    =============================== */
 
 .factions {
-  padding: 100px 10%; /*top bottom 100px, right left 10%*/
+  padding: 100px 10%;
   background: radial-gradient(circle at center, #05060a 0%, #0b0d15 100%);
 }
 
@@ -35,8 +35,6 @@
   border-radius: 16px;
   padding: 15px;
   cursor: pointer;
-
-  /* ▼▼▼ [FIX] Mengganti grayscale dengan opacity ▼▼▼ */
   opacity: 0.5;
   transition: all 0.3s ease;
 }
@@ -58,9 +56,7 @@
   transform: scale(1.05);
   border-color: rgba(100, 150, 255, 0.3);
   background: rgba(100, 150, 255, 0.1);
-  /* ▼▼▼ [FIX] Menghapus box-shadow glow ▼▼▼ */
 }
-
 
 /* 2. Kontainer Konten (Wrapper) */
 .faction-content-wrapper {
@@ -86,10 +82,8 @@
   position: absolute;
 }
 
-
 /* Styling di dalam konten */
 .faction-image {
-  /* ▼▼▼ [FIX] Memperbesar kolom gambar ▼▼▼ */
   flex: 0 0 400px;
   display: flex;
   justify-content: center;
@@ -97,12 +91,10 @@
 }
 
 .faction-image img {
-  /* ▼▼▼ [FIX] Memperbesar gambar di dalam kolom ▼▼▼ */
   width: 250px;
   height: 250px;
   object-fit: contain;
   transition: transform 0.4s ease;
-  border: 1px solid red;
 }
 
 .faction-info {
@@ -123,25 +115,6 @@
   line-height: 1.8;
   color: #d1d1d1;
   max-width: 500px;
-}
-
-.join-btn {
-  margin-top: 20px;
-  background: transparent;
-  border: 1px solid #b9c7ff;
-  color: #b9c7ff;
-  padding: 10px 20px;
-  border-radius: 30px;
-  cursor: pointer;
-  font-weight: 500;
-  letter-spacing: 0.8px;
-  transition: all 0.3s ease;
-}
-
-.join-btn:hover {
-  background: #b9c7ff;
-  color: #0b0d17;
-  transform: scale(1.05);
 }
 
 /* Responsive */
@@ -167,7 +140,6 @@
   }
 
   .faction-image img {
-    /* ▼▼▼ [FIX] Menyesuaikan ukuran di mobile ▼▼▼ */
     width: 150px;
     height: 150px;
   }

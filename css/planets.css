@@ -5,7 +5,7 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding: 100px 0; /*top-down*/
+  padding: 100px 0;
   background: radial-gradient(circle at center, #05060a 0%, #0b0d15 100%);
   display: flex;
   justify-content: center;
@@ -35,7 +35,7 @@
 
 .scroll-track {
   display: flex;
-  align-items: center; /*Inget flex-direction: row;*/
+  align-items: center;
   gap: 3rem;
   width: max-content;
   transform: translateX(0);
@@ -43,7 +43,7 @@
 }
 
 /* ==============================================
-   🌌 ENHANCED PLANET CARD (FIXED)
+   🌌 ENHANCED PLANET CARD
    ============================================== */
 
 .planet-card {
@@ -58,11 +58,10 @@
   cursor: pointer;
   perspective: 1000px;
   transition: transform 0.4s ease-in-out, box-shadow 0.45s ease, border-color 0.45s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1); /* Border awal sedikit putih */
+  border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   will-change: transform;
 }
-
 
 .planet-card::before {
   content: "";
@@ -74,27 +73,10 @@
   will-change: transform;
 }
 
-/* 🌠 Neon overlay (Dikompas oleh user) */
-/* .planet-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 30% 80%, rgba(255,0,180,0.25), transparent 70%),
-              radial-gradient(circle at 80% 20%, rgba(0,190,255,0.25), transparent 70%);
-  mix-blend-mode: screen;
-  opacity: 0.6;
-  transition: opacity 0.4s ease;
-  z-index: 1;
-} */
-
 /* hover effects */
 .planet-card:hover {
   transform: scale(1.03) translateY(-8px);
-
-  /* ▼▼▼ [DIUBAH] Border glow diubah ke putih ▼▼▼ */
   border: 1px solid rgba(255, 255, 255, 0.3);
-
-  /* ▼▼▼ [DIUBAH] Shadow glow diubah ke putih ▼▼▼ */
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55),
               0 0 45px rgba(255, 255, 255, 0.2);
 }
@@ -103,13 +85,6 @@
   transform: scale(1.2);
   filter: brightness(1.2) saturate(1.2);
 }
-
-/* ::after dinonaktifkan, jadi hover::after juga dinonaktifkan */
-/*
-.planet-card:hover::after {
-  opacity: 0.85;
-}
-*/
 
 /* 🌫 Glassmorphism Info Box */
 .planet-info {
@@ -129,11 +104,8 @@
 }
 
 .planet-card:hover .planet-info {
-  /* ▼▼▼ [DIUBAH] Shadow glow diubah ke putih ▼▼▼ */
   box-shadow: 0 0 18px rgba(255, 255, 255, 0.15),
               inset 0 1px 3px rgba(255,255,255,0.2);
-
-  /* ▼▼▼ [DIUBAH] Border glow diubah ke putih ▼▼▼ */
   border: 1px solid rgba(255,255,255,0.3);
 }
 
@@ -177,7 +149,7 @@
    =============================== */
 @media (max-width: 768px) {
   .planet-card {
-    flex: 0 0 260px; /* Ukuran di tablet */
+    flex: 0 0 260px;
     height: 440px;
   }
 }
@@ -192,7 +164,7 @@
   }
 
   .planet-card {
-     flex: 0 0 240px; /* Sedikit lebih kecil di HP */
+     flex: 0 0 240px;
      height: 420px;
   }
 }

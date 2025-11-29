@@ -3,24 +3,21 @@
    =============================== */
 
 .news-page {
-  padding: 140px 10% 100px 10%; /* Padding atas lebih banyak untuk navbar */
+  padding: 140px 10% 100px 10%;
   background: radial-gradient(ellipse at top, #0b0d17, #03040a 70%);
   min-height: 100vh;
-  /* border: 1px solid blue; */
 }
 
 .news-container {
   max-width: 100dvw;
   margin-inline: auto;
-  /* border: 1px solid red; */
 }
 
 .news-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 40px;
-  margin-top: -30px; /* Lebih dekat ke judul */
-  /* border: 1px solid red; */
+  margin-top: -30px;
 }
 
 /* === News Card === */
@@ -42,7 +39,7 @@
 
 /* Gambar Kartu */
 .news-card-image {
-  flex: 0 0 300px; /* Lebar gambar kaku 300px */
+  flex: 0 0 300px;
   max-height: 220px;
 }
 
@@ -90,11 +87,11 @@
   }
 
   .news-card {
-    flex-direction: column; /* Tumpuk vertikal di HP */
+    flex-direction: column;
   }
 
   .news-card-image {
-    flex-basis: 200px; /* Tinggi gambar di HP */
+    flex-basis: 200px;
     width: 100%;
     max-height: 200px;
   }
